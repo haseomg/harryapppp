@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/imageButtonBefore"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/white"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/textViewMonth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left" />
+
+    <TextView
+        android:id="@+id/textViewMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="1dp"
+        android:fontFamily="@font/bmjua"
+        android:text="2023년 06월"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonNext"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonBefore"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNext"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="74dp"
+        android:backgroundTint="@color/white"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewMonth"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonBefore">
+
+        <TextView
+            android:id="@+id/textViewSunday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="SUN"
+            android:textColor="#FF0000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewMonday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="MON"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewTuesday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="TUE"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewWednesday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="WED"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewThursday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="THU"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewFriday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="FRI"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewSaturday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="SAT"
+            android:textColor="#008EFF"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dayRecyclerView"
+        android:layout_width="410dp"
+        android:layout_height="364dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <TextView
+        android:id="@+id/textViewSelectedDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center"
+        android:text="0000년 00월 00일"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dayRecyclerView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="410dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="9dp"
+        android:background="@drawable/border"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSelectedDate" />
+
+    <ImageButton
+        android:id="@+id/btn_add"
+        android:layout_width="40dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="187dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="8dp"
+        android:background="#00FFEB3B"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/add" />
+
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="410dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center"
+        android:text="항목이 비어있습니다."
+        android:textColor="@color/black"
+        android:visibility="visible"
+        android:background="@drawable/border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSelectedDate" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center"
+        android:text="금두꺼비 가계부"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonPieChart"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="23dp"
+        android:backgroundTint="@color/white"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toEndOf="@+id/textViewTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/piechart" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="410dp"
+        android:layout_height="390dp"
+        android:background="@drawable/border"
+        app:layout_constraintBottom_toBottomOf="@+id/dayRecyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/dayRecyclerView"
+        app:layout_constraintStart_toStartOf="@+id/dayRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

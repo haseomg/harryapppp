@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="type">
+        <item>수입</item>
+        <item>지출</item>
+    </string-array>
+
+    <string-array name="income">
+        <item>월급</item>
+        <item>용돈</item>
+        <item>이자</item>
+        <item>보너스</item>
+        <item>기타</item>
+    </string-array>
+
+
+    <string-array name="spend">
+        <item>식비</item>
+        <item>의류미용비</item>
+        <item>주거비</item>
+        <item>생활용품비</item>
+        <item>병원의료비</item>
+        <item>교통비</item>
+        <item>저축</item>
+        <item>기타</item>
+    </string-array>
+
+</resources>

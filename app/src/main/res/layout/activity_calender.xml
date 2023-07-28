@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalenderActivity">
+
+    <TextView
+        android:id="@+id/textViewMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/bmjua"
+        android:text="2023년 06월"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonNext"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonBefore"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBefore"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="27dp"
+        android:backgroundTint="@color/white"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/textViewMonth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNext"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="46dp"
+        android:backgroundTint="@color/white"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewMonth"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonBefore">
+
+        <TextView
+            android:id="@+id/textViewSunday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="SUN"
+            android:textColor="#FF0000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewMonday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="MON"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewTuesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="TUE"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewWednesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="WED"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewThursday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="THU"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewFriday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="FRI"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewSaturday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bmjua"
+            android:gravity="center"
+            android:text="SAT"
+            android:textColor="#008EFF"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dayRecyclerView"
+        android:layout_width="409dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

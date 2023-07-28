@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDay"
+        android:layout_gravity="center"
+        android:text="1"
+        android:fontFamily="@font/bmjua"
+        android:textColor="@color/black"
+        android:textSize="20dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewHoliday"
+        android:layout_gravity="center"
+        android:text="휴일"
+        android:fontFamily="@font/bmjua"
+        android:textColor="#FF0000"
+        android:visibility="gone"
+        android:textSize="12dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewIncome"
+        android:text="+3000원"
+        android:gravity="right"
+        android:textSize="9dp"
+        android:textColor="#0074D1"
+        android:layout_gravity="right"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewSpend"
+        android:text="-5000원"
+        android:gravity="right"
+        android:textSize="9dp"
+        android:layout_gravity="right"
+        ></TextView>
+
+
+</LinearLayout>

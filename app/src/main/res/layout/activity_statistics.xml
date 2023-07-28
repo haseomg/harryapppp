@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".StatisticsActivity">
+
+    <TextView
+        android:id="@+id/textViewStatistics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="179dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="179dp"
+        android:layout_marginBottom="37dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center"
+        android:text="통계"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewYear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="@color/white"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewStatistics"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="390dp"
+        android:layout_height="300dp"
+        android:background="@drawable/border"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewMonth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" >
+
+
+    </com.github.mikephil.charting.charts.BarChart>
+
+    <TextView
+        android:id="@+id/textViewNoData"
+        android:layout_width="390dp"
+        android:layout_height="300dp"
+        android:text="저장된 데이터가 없습니다."
+        android:fontFamily="@font/bmjua"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/barChart"
+        app:layout_constraintEnd_toEndOf="@+id/barChart"
+        app:layout_constraintStart_toStartOf="@+id/barChart"
+        app:layout_constraintTop_toTopOf="@+id/barChart" />
+
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="390dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="11dp"
+        android:background="@drawable/border"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </com.github.mikephil.charting.charts.PieChart>
+
+    <TextView
+        android:id="@+id/textViewNoData2"
+        android:layout_width="390dp"
+        android:layout_height="300dp"
+        android:text="저장된 데이터가 없습니다."
+        android:fontFamily="@font/bmjua"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/pieChart"
+        app:layout_constraintEnd_toEndOf="@+id/pieChart"
+        app:layout_constraintStart_toStartOf="@+id/pieChart"
+        app:layout_constraintTop_toTopOf="@+id/pieChart" />
+
+    <TextView
+        android:id="@+id/textViewYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="173dp"
+        android:layout_marginEnd="173dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/bmjua"
+        android:text="0000년"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/barChart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="185dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/bmjua"
+        android:text="00월"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/pieChart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonYearIncome"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="@drawable/left_button_round"
+        android:fontFamily="@font/bmjua"
+        android:text="수입"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewYear"
+        app:layout_constraintEnd_toStartOf="@+id/buttonYearSpend"
+        app:layout_constraintTop_toTopOf="@+id/textViewYear"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonYearSpend"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/right_button_round"
+        android:fontFamily="@font/bmjua"
+        android:text="수출"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonYearIncome"
+        app:layout_constraintEnd_toEndOf="@+id/barChart"
+        app:layout_constraintTop_toTopOf="@+id/buttonYearIncome"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonMonthIncome"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="@drawable/left_button_round"
+        android:fontFamily="@font/bmjua"
+        android:text="수입"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewMonth"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMonthSpend"
+        app:layout_constraintTop_toTopOf="@+id/textViewMonth" />
+
+    <Button
+        android:id="@+id/buttonMonthSpend"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="@drawable/right_button_round"
+        android:fontFamily="@font/bmjua"
+        android:text="수출"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonMonthIncome"
+        app:layout_constraintEnd_toEndOf="@+id/pieChart"
+        app:layout_constraintTop_toTopOf="@+id/buttonMonthIncome" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
