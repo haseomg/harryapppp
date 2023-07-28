@@ -90,11 +90,15 @@ public class LogInActivity extends AppCompatActivity {
 
                                 startActivity(goMainAcitivyIntent);
 
-                               
+
+
+
 
 
                                 break;
                             }
+
+
 
                     }
 
