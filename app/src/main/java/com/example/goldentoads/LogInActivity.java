@@ -57,6 +57,7 @@ public class LogInActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPasword);
 
         buttonJoin.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
 
