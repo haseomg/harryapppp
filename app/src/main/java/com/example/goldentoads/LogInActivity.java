@@ -1,24 +1,17 @@
 package com.example.goldentoads;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.Locale;
 
 public class LogInActivity extends AppCompatActivity {
@@ -29,8 +22,6 @@ public class LogInActivity extends AppCompatActivity {
     String makeID, makePassword, userID, userPassword;
 
     private Context LogInContext;
-
-    ArrayList<User> users = new ArrayList<>();
 
     String TAG;
 
@@ -56,11 +47,9 @@ public class LogInActivity extends AppCompatActivity {
         editTextID = findViewById(R.id.editTextID);
         editTextPassword = findViewById(R.id.editTextPasword);
 
+
+
         buttonJoin.setOnClickListener(new View.OnClickListener() {
-
-
-
-
 
             @Override
             public void onClick(View v) {
@@ -79,7 +68,7 @@ public class LogInActivity extends AppCompatActivity {
                 userID = editTextID.getText().toString();
                 userPassword = editTextPassword.getText().toString();
                 boolean foundUser = false;
-                
+
 
                 if (userID.equals("")) {
                     Toast.makeText(LogInContext, "아이디를 입력하세요", Toast.LENGTH_SHORT).show();
@@ -101,14 +90,14 @@ public class LogInActivity extends AppCompatActivity {
 
                                 startActivity(goMainAcitivyIntent);
 
-                                Toast.makeText(LogInContext, userID+"님 로그인 하셨습니다.", Toast.LENGTH_SHORT).show();
+                               
 
 
                                 break;
                             }
 
                     }
-                    
+
                     if(!foundUser){
                         Toast.makeText(LogInContext, "아이디 또는 비밀번호가 틀렸습니다.", Toast.LENGTH_SHORT).show();
                     }
@@ -140,37 +129,29 @@ public class LogInActivity extends AppCompatActivity {
 
 
 
-        buttonJoinFirst.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        buttonJoinFirst.setOnClickListener(v -> {
 
-                boolean idExists = false; // 아이디 중복 여부 변수 추가
+            boolean idExists = false; // 아이디 중복 여부 변수 추가
 
-                for (int i = 0; i < getUserSize(); i++) {
-                    if (editTextMakeID.getText().toString().equals(getUser(i).userID)) {
-                        idExists = true; // 아이디 중복 시 변수 값을 true로 설정
-                        break; // 중복된 아이디가 발견되면 반복문 종료
-                    }
-                }
-
-                if (idExists) {
-                    Toast.makeText(LogInContext, "존재하는 아이디입니다.", Toast.LENGTH_SHORT).show();
-                } else {
-                    makeID = editTextMakeID.getText().toString();
-                    makePassword = editTextMakePassword.getText().toString();
-                    addUser(makeID, makePassword);
-                    Toast.makeText(LogInContext, "ID: " + makeID + "\nPassword: " + makePassword + "로 생성되었습니다.", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
+            for (int i = 0; i < getUserSize(); i++) {
+                if (editTextMakeID.getText().toString().equals(getUser(i).userID)) {
+                    idExists = true; // 아이디 중복 시 변수 값을 true로 설정
+                    break; // 중복된 아이디가 발견되면 반복문 종료
                 }
             }
-        });
 
-        buttonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            if (idExists) {
+                Toast.makeText(LogInContext, "존재하는 아이디입니다.", Toast.LENGTH_SHORT).show();
+            } else {
+                makeID = editTextMakeID.getText().toString();
+                makePassword = editTextMakePassword.getText().toString();
+                addUser(makeID, makePassword);
+                Toast.makeText(LogInContext, "ID: " + makeID + "\nPassword: " + makePassword + "로 생성되었습니다.", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });
+
+        buttonCancel.setOnClickListener(v -> dialog.dismiss());
 
         dialog.show();
     }
@@ -213,14 +194,14 @@ public class LogInActivity extends AppCompatActivity {
         }
     }
 
-    void getUserList(ArrayList<User> users) { // 저장된 모든 멤버 추가하기
-         users.clear();
-        for (int i = 0; i < getUserSize(); i++) {
-            users.add(getUser(i));
-        }
+//    void getUserList(ArrayList<User> users) { // 저장된 모든 멤버 추가하기
+//         users.clear();
+//        for (int i = 0; i < getUserSize(); i++) {
+//            users.add(getUser(i));
+//        }
 
 
-    }
+//    }
 
 //    void deleteMember(User user) {
 ////        선택한 User 객체의 키부터 마지막 키까지 하나씩 데이터를 당기는 작업. 마지막 키는 삭제.
